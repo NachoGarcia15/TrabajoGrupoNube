@@ -105,11 +105,9 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 
 Es recomendable separar el código HTTP, el código interno del backend, el mensaje humano, los detalles de campo y el identificador de trazabilidad. Todos los errores devueltos por la API de UrbanPulse seguirán estrictamente este formato unificado:
 
-
-
 **Ejemplo de respuesta para un error:**
 
-
+```json
 
 {
 
