@@ -140,3 +140,24 @@ JSON
 
 }
 
+### 4. Estructura de Respuestas (DTOs)
+
+Para evitar exponer el modelo de base de datos directamente, las respuestas utilizarán DTOs (Data Transfer Objects) en formato JSON[cite: 8, 9]. 
+
+**Ejemplo de respuesta para una Incidencia (`GET /api/incidents/{id}`):**
+```json
+{
+  "id": "INC-1024",
+  "title": "Semáforo averiado en Alameda Principal",
+  "description": "El semáforo de peatones no cambia a verde.",
+  "status": "VALIDATED",
+  "category": "TRAFFIC_LIGHT",
+  "priority": "HIGH",
+  "location": {
+    "latitude": 36.7184,
+    "longitude": -4.4201,
+    "district": "Centro"
+  },
+  "createdAt": "2026-10-02T10:30:00Z"
+}
+
