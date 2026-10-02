@@ -1,34 +1,37 @@
-Diseño de API REST - UrbanPulse
+# Diseño de API REST - UrbanPulse
 
 ===
 
-Este documento define la estructura de la API para UrbanPulse. La API debe estar centrada en recursos (usando sustantivos en plural) y no en acciones, delegando la intención de la operación al método HTTP.   
+Este documento define la estructura de la API para UrbanPulse. La API debe estar centrada en recursos (usando sustantivos en plural) y no en acciones, delegando la intención de la operación al método HTTP.
 
 
-1. Rutas Principales (Endpoints)
----
+
+1. ## Rutas Principales (Endpoints)
+
+\---
 
 
-1.1 Recurso: Incidencias (/api/incidents)
----
+
+### 1.1 Recurso: Incidencias (/api/incidents)
 
 
 
 **POST /api/incidents:** Registra un nuevo reporte.
 
 
+
 **GET /api/incidents:** Obtiene el catálogo de incidencias. Los filtros, la ordenación y la paginación se aplicarán utilizando parámetros de consulta (query parameters), por ejemplo: ?status=VALIDATED\&sort=-priority.
 
 &#x20;  
-**GET /api/incidents/{id}:** Consulta los detalles de una incidencia específica identificada por su parámetro de ruta (path parameter).   
+**GET /api/incidents/{id}:** Consulta los detalles de una incidencia específica identificada por su parámetro de ruta (path parameter).
 
 
 
-**PATCH /api/incidents/{id}:** Modifica parcialmente un recurso, enviando en el cuerpo (body) únicamente los campos que deben cambiar (ej. para pasar el estado a VALIDATED o asignar un técnico).   
+**PATCH /api/incidents/{id}:** Modifica parcialmente un recurso, enviando en el cuerpo (body) únicamente los campos que deben cambiar (ej. para pasar el estado a VALIDATED o asignar un técnico).
 
 
 
-#### 1.2 Recurso: Usuarios (/api/users)
+### 1.2 Recurso: Usuarios (/api/users)
 
 
 
@@ -36,11 +39,11 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 
 
 
-**GET /api/users/{id}**: Recupera la información detallada de un usuario.   
+**GET /api/users/{id}**: Recupera la información detallada de un usuario.
 
 
 
-### 2\. Códigos de Estado HTTP
+## 2\. Códigos de Estado HTTP
 
 
 
@@ -48,11 +51,11 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 
 
 
-**200 OK:** La operación se realizó correctamente.   
+**200 OK:** La operación se realizó correctamente.
 
 
 
-**201 Created:** El recurso se creó con éxito tras una petición POST.   
+**201 Created:** El recurso se creó con éxito tras una petición POST.
 
 
 
@@ -80,7 +83,7 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 
 
 
-**422 Unprocessable Entity:** Los datos tienen el formato correcto, pero fallan en las reglas de validación del dominio.   
+**422 Unprocessable Entity:** Los datos tienen el formato correcto, pero fallan en las reglas de validación del dominio.
 
 
 
@@ -96,17 +99,19 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 
 
 
-### 3\. Estructura Común de Errores
+## 3\. Estructura Común de Errores
 
 ### 
 
-Es recomendable separar el código HTTP, el código interno del backend, el mensaje humano, los detalles de campo y el identificador de trazabilidad. Todos los errores devueltos por la API de UrbanPulse seguirán estrictamente este formato unificado:   
+Es recomendable separar el código HTTP, el código interno del backend, el mensaje humano, los detalles de campo y el identificador de trazabilidad. Todos los errores devueltos por la API de UrbanPulse seguirán estrictamente este formato unificado:
 
 
 
-JSON
+**Ejemplo de respuesta para un error:**
 
 
+
+```json
 
 {
 
@@ -140,18 +145,19 @@ JSON
 
 }
 
-### 4. Estructura de Respuestas (DTOs)
+## 4\. Estructura de Respuestas (DTOs)
 
-Para evitar exponer el modelo de base de datos directamente, las respuestas utilizarán DTOs (Data Transfer Objects) en formato JSON[cite: 8, 9]. 
+Para evitar exponer el modelo de base de datos directamente, las respuestas utilizarán DTOs (Data Transfer Objects) en formato JSON\[cite: 8, 9].
 
 **Ejemplo de respuesta para una Incidencia (`GET /api/incidents/{id}`):**
+
 ```json
 {
   "id": "INC-1024",
   "title": "Semáforo averiado en Alameda Principal",
   "description": "El semáforo de peatones no cambia a verde.",
   "status": "VALIDATED",
-  "category": "TRAFFIC_LIGHT",
+  "category": "TRAFFIC\_LIGHT",
   "priority": "HIGH",
   "location": {
     "latitude": 36.7184,
@@ -160,4 +166,5 @@ Para evitar exponer el modelo de base de datos directamente, las respuestas util
   },
   "createdAt": "2026-10-02T10:30:00Z"
 }
+
 
