@@ -141,6 +141,8 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 
 }
 
+```
+
 
 
 ## 4\. Estructura de Respuestas (DTOs)
@@ -164,5 +166,5 @@ Para evitar exponer el modelo de base de datos directamente, las respuestas util
   },
   "createdAt": "2026-10-02T10:30:00Z"
 }
-
+```
 
