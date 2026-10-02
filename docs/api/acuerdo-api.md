@@ -110,36 +110,21 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 ```json
 
 {
-
-&#x20; "type": "\[https://api.urbanpulse.com/problems/validation-error](https://api.urbanpulse.com/problems/validation-error)",
-
-&#x20; "title": "Validation failed",
-
-&#x20; "status": 422,
-
-&#x20; "code": "VALIDATION\_ERROR",
-
-&#x20; "detail": "Two fields contain invalid values.",
-
-&#x20; "instance": "/api/incidents",
-
-&#x20; "requestId": "req\_8Xy3Z",
-
-&#x20; "errors": \[
-
-&#x20;   {
-
-&#x20;     "field": "title",
-
-&#x20;     "code": "MISSING\_FIELD",
-
-&#x20;     "message": "The title is required."
-
-&#x20;   }
-
-&#x20; ]
-
-}
+  "type": "\[https://api.urbanpulse.com/problems/validation-error](https://api.urbanpulse.com/problems/validation-error)",
+  "title": "Validation failed",
+  "status": 422,
+  "code": "VALIDATION\_ERROR",
+  "detail": "Two fields contain invalid values.",
+  "instance": "/api/incidents",
+  "requestId": "req\_8Xy3Z",
+  "errors": \[
+    {
+      "field": "title",
+      "code": "MISSING\_FIELD",
+      "message": "The title is required."
+    }
+  ]
+  }
 
 ```
 
