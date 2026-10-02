@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>es.taw</groupId>
-    <artifactId>MoviesTESAW</artifactId>
+    <artifactId>UrbanPulseAPP</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>moviesTESAW</name>
-    <description>MoviesTESAW</description>
+    <name>urbanPulseApp</name>
+    <description>UrbanPulseApp</description>
     <properties>
         <java.version>11</java.version>
     </properties>
