@@ -111,7 +111,7 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 
 {
 
-&#x20; "type": "https://api.urbanpulse.com/problems/validation-error",
+&#x20; "type": "\[https://api.urbanpulse.com/problems/validation-error](https://api.urbanpulse.com/problems/validation-error)",
 
 &#x20; "title": "Validation failed",
 
@@ -142,8 +142,6 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 }
 
 ```
-
-
 
 ## 4\. Estructura de Respuestas (DTOs)
 
