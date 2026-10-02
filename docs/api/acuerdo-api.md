@@ -19,6 +19,7 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 **POST /api/incidents:** Registra un nuevo reporte.
 
 
+
 **GET /api/incidents:** Obtiene el catálogo de incidencias. Los filtros, la ordenación y la paginación se aplicarán utilizando parámetros de consulta (query parameters), por ejemplo: ?status=VALIDATED\&sort=-priority.
 
 &#x20;  
@@ -109,7 +110,7 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 ```json
 
 {
-  "type": "\[https://api.urbanpulse.com/problems/validation-error\](https://api.urbanpulse.com/problems/validation-error)",
+  "type": "\[https://api.urbanpulse.com/problems/validation-error](https://api.urbanpulse.com/problems/validation-error)",
   "title": "Validation failed",
   "status": 422,
   "code": "VALIDATION\_ERROR",
@@ -129,7 +130,7 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 
 ## 4\. Estructura de Respuestas (DTOs)
 
-Para evitar exponer el modelo de base de datos directamente, las respuestas utilizarán DTOs (Data Transfer Objects) en formato JSON\[cite: 8, 9\].
+Para evitar exponer el modelo de base de datos directamente, las respuestas utilizarán DTOs (Data Transfer Objects) en formato JSON\[cite: 8, 9].
 
 **Ejemplo de respuesta para una Incidencia (`GET /api/incidents/{id}`):**
 
@@ -149,4 +150,3 @@ Para evitar exponer el modelo de base de datos directamente, las respuestas util
   "createdAt": "2026-10-02T10:30:00Z"
 }
 ```
-
