@@ -6,7 +6,7 @@ Este documento define la estructura de la API para UrbanPulse. La API debe estar
 
 
 
-1. ## Rutas Principales (Endpoints)
+## 1\. Rutas Principales (Endpoints)
 
 \---
 
