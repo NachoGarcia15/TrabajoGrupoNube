@@ -111,8 +111,6 @@ Es recomendable separar el código HTTP, el código interno del backend, el mens
 
 
 
-```json
-
 {
 
 &#x20; "type": "https://api.urbanpulse.com/problems/validation-error",
